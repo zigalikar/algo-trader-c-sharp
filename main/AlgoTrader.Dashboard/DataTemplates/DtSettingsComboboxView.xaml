@@ -1,0 +1,14 @@
+﻿<Grid
+    x:Class="AlgoTrader.Dashboard.DataTemplates.DtSettingsComboboxView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <StackPanel>
+        <Label Content="{Binding Title}" />
+        <Label Content="{Binding Description}" Foreground="LightGray" />
+    </StackPanel>
+</Grid>

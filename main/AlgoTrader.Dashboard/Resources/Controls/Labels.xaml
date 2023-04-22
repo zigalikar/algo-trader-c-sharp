@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="LabelSuccess" TargetType="Label">
+        <Setter Property="Foreground" Value="{StaticResource ColorGreen}" />
+    </Style>
+    <Style x:Key="LabelDanger" TargetType="Label">
+        <Setter Property="Foreground" Value="{StaticResource ColorRed}" />
+    </Style>
+</ResourceDictionary>

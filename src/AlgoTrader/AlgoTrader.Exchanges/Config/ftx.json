@@ -1,0 +1,21 @@
+{
+  "Name": "FTX",
+  "ApiKeys": {
+    "Production": "RCbE5AzGdXxAnv5-HIt1kTA9rrX9rOO9f5SkhPo1",
+    "Testnet": ""
+  },
+  "ApiSecrets": {
+    "Production": "ZUHirLPHofYpE08gTjewbvhVeftIgY9s_PqhLCNF",
+    "Testnet": ""
+  },
+  "Api": {
+    "Production": "https://ftx.com/api",
+    "Testnet": ""
+  },
+  "Websocket": {
+    "Production": "wss://ftx.com/ws",
+    "Testnet": ""
+  },
+  "MakerFee": 0.002,
+  "TakerFee": 0.007
+}

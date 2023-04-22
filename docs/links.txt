@@ -1,0 +1,27 @@
+Evaluating trading strategy using ML and big data:
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.466.4798&rep=rep1&type=pdf
+
+Evaluating trading strats:
+https://medium.com/auquan/evaluating-trading-strategies-fe986062a96b
+
+Backtesting biases and how to avoid them:
+https://medium.com/auquan/backtesting-biases-and-how-to-avoid-them-776180378335
+
+Risk management and trading psychology
+https://medium.com/auquan/risk-management-and-trading-psychology-d2ac76c39b83
+
+Metrics for evaluating the performance of an algorithm
+https://www.quora.com/What-are-the-metrics-for-evaluating-the-performance-of-an-algorithm-in-algorithmic-trading-systems
+http://tradingtuitions.com/understanding-amibroker-backtest-report/
+
+Sharpe ratio, drawdowns:
+https://www.quantstart.com/articles/Event-Driven-Backtesting-with-Python-Part-VII/
+
+A strategy that generally recovers from a max draw down of 10% within days is imho much more favorable than a strategy with a max draw down that, however, takes weeks or months to recover:
+https://quant.stackexchange.com/questions/3970/drawdown-calculation-for-strategies
+
+Maximum drawdown:
+http://www.stat.columbia.edu/~vecer/maxdrawdown3.pdf
+
+Calculating rolling maximum, drawdown:
+https://stackoverflow.com/questions/24937128/calculate-rolling-window-max-drawdown-in-c-sharp

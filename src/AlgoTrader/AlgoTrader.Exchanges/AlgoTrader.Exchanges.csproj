@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Config\binance.json" />
+    <None Remove="Config\ftx.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Config\binance.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\ftx.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="NLog" Version="4.7.7" />
+    <PackageReference Include="Websocket.Client" Version="4.3.30" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CryptoTools\CryptoTools.Core\CryptoTools.Core.csproj" />
+    <ProjectReference Include="..\AlgoTrader.Core\AlgoTrader.Core.csproj" />
+    <ProjectReference Include="..\AlgoTrader.Feeds\AlgoTrader.Feeds.csproj" />
+  </ItemGroup>
+
+</Project>

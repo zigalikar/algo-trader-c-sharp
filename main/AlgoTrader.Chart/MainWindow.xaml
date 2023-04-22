@@ -1,0 +1,50 @@
+﻿<Window
+    x:Class="AlgoTrader.Chart.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:fc="clr-namespace:FancyCandles;assembly=FancyCandles"
+    xmlns:d3="clr-namespace:InteractiveDataDisplay.WPF;assembly=InteractiveDataDisplay.WPF"
+    xmlns:dj="clr-namespace:DJ;assembly=NlogViewer"
+    Background="#131622"
+    mc:Ignorable="d"
+    Height="950"
+    Title="Results">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300" />
+            <RowDefinition Height="300" />
+            <RowDefinition Height="300" />
+        </Grid.RowDefinitions>
+
+        <!-- main chart -->
+        <fc:CandleChart x:Name="PriceChart" IsHorizontalGridlinesEnabled="False" IsVerticalGridlinesEnabled="False" Grid.RowSpan="2" IsVolumePanelVisible="False" />
+        
+        <!--<d3:Chart x:Name="MainChart" BottomTitle="Date" LeftTitle="Price" Background="Transparent">
+            <d3:Plot x:Name="MainPlot" Background="Transparent">
+                <d3:LineGraph x:Name="priceGraph" Description="Price" Stroke="Blue" StrokeThickness="3" />
+                <d3:CircleMarkerGraph x:Name="ordersGraph" Description="Orders" Background="Transparent" />
+
+                <d3:LineGraph x:Name="sma20Graph" Description="SMA20" Stroke="Orange" StrokeThickness="2" />
+                <d3:LineGraph x:Name="sma50Graph" Description="SMA50" Stroke="Red" StrokeThickness="2" />
+            </d3:Plot>
+        </d3:Chart>-->
+
+        <!-- portfolio performance -->
+        <!--<d3:Chart Grid.Row="1" BottomTitle="Date" LeftTitle="Portfolio" LegendVisibility="Collapsed">
+            <d3:Plot>
+                <d3:LineGraph x:Name="portfolioGraph" Stroke="Blue" StrokeThickness="3" />
+            </d3:Plot>
+        </d3:Chart>-->
+
+        <!-- log -->
+        <DockPanel Grid.Row="2">
+            <Label DockPanel.Dock="Top">Logs:</Label>
+            <dj:NLogViewer />
+        </DockPanel>
+    </Grid>
+</Window>

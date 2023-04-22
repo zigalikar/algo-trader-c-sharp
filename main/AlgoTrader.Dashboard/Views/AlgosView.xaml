@@ -1,0 +1,97 @@
+﻿<ContentControl
+    x:Class="AlgoTrader.Dashboard.Views.AlgosView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:cts="clr-namespace:AlgoTrader.Dashboard.Controls"
+    x:Name="this"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+        <ContentControl x:Name="RunningAlgos" />
+
+        <!-- Recent -->
+        <StackPanel Visibility="{Binding RecentAlgosVisibility}">
+            <Label FontSize="20" Margin="0,10,0,0">Recent</Label>
+            <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth5">
+                <cts:ATListView ItemsSource="{Binding RecentAlgos}">
+                </cts:ATListView>
+            </materialDesign:Card>
+        </StackPanel>
+
+        <!-- All algos -->
+        <Label FontSize="20" Margin="0,10,0,0">All Algos</Label>
+        <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth5">
+            <cts:ATListView ItemsSource="{Binding AllAlgos}">
+                <cts:ATListView.ItemTemplate>
+                    <DataTemplate>
+                        <Expander Header="{Binding Data.Type}" Background="Transparent" FlowDirection="RightToLeft" HorizontalAlignment="{Binding Path=HorizontalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContentPresenter}}, Mode=OneWayToSource}">
+                            <Expander.HeaderTemplate>
+                                <DataTemplate>
+                                    <DockPanel FlowDirection="LeftToRight">
+                                        <Label Content="{Binding .}" />
+                                    </DockPanel>
+                                </DataTemplate>
+                            </Expander.HeaderTemplate>
+                            <Expander.Content>
+                                <StackPanel FlowDirection="LeftToRight">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <!-- Exchange -->
+                                        <StackPanel Grid.Column="0">
+                                            <Label FontWeight="Bold">Account</Label>
+                                            <ComboBox
+                                                ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=DataContext.AllAccounts}"
+                                                SelectedItem="{Binding Path=SelectedAccount, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                                                DisplayMemberPath="Name" />
+                                        </StackPanel>
+
+                                        <!-- Currency pair -->
+                                        <StackPanel Grid.Column="1" Margin="20,0">
+                                            <Label FontWeight="Bold">Currency pair</Label>
+                                            <ComboBox
+                                                IsEnabled="{Binding CurrencyPairListEnabled}"
+                                                ItemsSource="{Binding CurrencyPairOptions}"
+                                                SelectedItem="{Binding Path=SelectedCurrencyPair, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                                        </StackPanel>
+
+                                        <!-- Time frame -->
+                                        <StackPanel Grid.Column="2">
+                                            <Label FontWeight="Bold">Time frame</Label>
+                                            <ComboBox
+                                                ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=DataContext.AllTimeFrames}"
+                                                SelectedItem="{Binding Path=SelectedTimeFrame, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                                        </StackPanel>
+
+                                        <!-- Name -->
+                                        <StackPanel Grid.Row="1">
+                                            <Label FontWeight="Bold">Name</Label>
+                                            <TextBox Text="{Binding Path=AlgoName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <Button
+                                        Margin="0,10,0,0"
+                                        HorizontalAlignment="Left"
+                                        Style="{StaticResource ButtonSuccess}"
+                                        IsEnabled="{Binding Validation.ValidationResult}"
+                                        Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=DataContext.AlgoStartCommand}"
+                                        CommandParameter="{Binding .}">
+                                        START
+                                    </Button>
+                                </StackPanel>
+                            </Expander.Content>
+                        </Expander>
+                    </DataTemplate>
+                </cts:ATListView.ItemTemplate>
+            </cts:ATListView>
+        </materialDesign:Card>
+    </StackPanel>
+</ContentControl>

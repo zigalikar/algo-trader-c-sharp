@@ -1,0 +1,10 @@
+﻿<Grid
+    x:Class="AlgoTrader.Dashboard.DataTemplates.DtSettingsItemView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+        <Label>tsadasdasd</Label>
+        <!--<Label Content="{Binding Title}" />
+        <Label Content="{Binding Description}" Foreground="LightGray" />-->
+    </StackPanel>
+</Grid>

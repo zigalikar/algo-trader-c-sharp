@@ -1,0 +1,23 @@
+﻿<ContentControl
+    x:Class="AlgoTrader.Dashboard.Views.Popup.ShowAccountPopupView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    MinWidth="220">
+    <StackPanel>
+        <Label FontWeight="Bold">Exchange</Label>
+        <ComboBox IsEnabled="False">
+          <ComboBoxItem IsSelected="True" Content="{Binding Parameter.Exchange.Name}" />
+        </ComboBox>
+
+        <Label FontWeight="Bold" Margin="0,10,0,0">API Key</Label>
+        <TextBox Text="{Binding Parameter.APIKey}" IsEnabled="False" />
+
+        <Label FontWeight="Bold" Margin="0,10,0,0">API Secret</Label>
+        <TextBox Text="{Binding Parameter.APISecret}" IsEnabled="False" />
+
+        <Label FontWeight="Bold" Margin="0,10,0,0">Account name</Label>
+        <TextBox Text="{Binding Parameter.Name}" IsEnabled="False" />
+
+        <Button Margin="0,10,0,0" Command="{Binding CloseCommand}">CLOSE</Button>
+    </StackPanel>
+</ContentControl>

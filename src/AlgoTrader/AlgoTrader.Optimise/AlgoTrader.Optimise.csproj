@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AlgoTrader.Algos\AlgoTrader.Algos.csproj" />
+    <ProjectReference Include="..\AlgoTrader.Backtesting\AlgoTrader.Backtesting.csproj" />
+    <ProjectReference Include="..\AlgoTrader.Core\AlgoTrader.Core.csproj" />
+    <ProjectReference Include="..\AlgoTrader.Evaluate\AlgoTrader.Evaluate.csproj" />
+    <ProjectReference Include="..\AlgoTrader.Exchanges\AlgoTrader.Exchanges.csproj" />
+    <ProjectReference Include="..\AlgoTrader.Feeds\AlgoTrader.Feeds.csproj" />
+  </ItemGroup>
+
+</Project>

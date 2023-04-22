@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.7.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AlgoTrader.Core\AlgoTrader.Core.csproj" />
+    <ProjectReference Include="..\AlgoTrader.Technical\AlgoTrader.Technical.csproj" />
+  </ItemGroup>
+
+</Project>

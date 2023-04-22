@@ -1,0 +1,12 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="ButtonSuccess" BasedOn="{StaticResource MaterialDesignRaisedButton}" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource ColorGreen}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ColorGreen}" />
+    </Style>
+    <Style x:Key="ButtonDanger" BasedOn="{StaticResource MaterialDesignRaisedButton}" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource ColorRed}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ColorRed}" />
+    </Style>
+</ResourceDictionary>

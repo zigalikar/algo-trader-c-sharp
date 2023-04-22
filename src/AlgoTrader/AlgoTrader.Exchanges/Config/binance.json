@@ -1,0 +1,21 @@
+{
+  "Name": "Binance",
+  "ApiKeys": {
+    "Production": "uP9peGsynYUfvDuT28Wx3tz9D4pClvYju5VRVf2oRSLdrtTqKi3nA5Wjj5olFD92",
+    "Testnet": "sqf3h0gqY4VbxNr2tyKNLxIkLfAkeCEpoSvBfWYluh76MzOjwzOwBzTqsk2q8kQ3"
+  },
+  "ApiSecrets": {
+    "Production": "rYFsuEWKsViFFSN5t6s2p4d0qbJ2HPGoIzHHPu34Wu3nIvem2mLTte565SQSIshR",
+    "Testnet": "9ieDXDYfhBb88lbnOBvQ41Uc00RTMPXkqlEnBmYBHZYnZQawi0ZpNLdcNlCoQDN6"
+  },
+  "Api": {
+    "Production": "https://api.binance.com/api/v3",
+    "Testnet": "https://testnet.binance.vision/api/v3"
+  },
+  "Websocket": {
+    "Production": "wss://stream.binance.com:9443/ws",
+    "Testnet": "wss://testnet.binance.vision/ws"
+  },
+  "MakerFee": 0.001,
+  "TakerFee": 0.001
+}

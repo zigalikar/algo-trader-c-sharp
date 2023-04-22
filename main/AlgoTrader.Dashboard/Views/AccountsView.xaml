@@ -1,0 +1,62 @@
+﻿<ContentControl
+    x:Class="AlgoTrader.Dashboard.Views.AccountsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:cts="clr-namespace:AlgoTrader.Dashboard.Controls"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <!-- Add new account -->
+        <StackPanel>
+            <Button Style="{StaticResource MaterialDesignFlatButton}" HorizontalAlignment="Left" Command="{Binding AddAccountCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="AccountAddOutline" VerticalAlignment="Center" />
+                    <Label VerticalAlignment="Center">Add new account</Label>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        
+        <!-- Existing accounts -->
+        <StackPanel Margin="0,10,0,0">
+            <Label FontSize="20">Accounts</Label>
+            <Label Visibility="{Binding NoAccountsVisibility}">Click the "Add new account" button to add a new account.</Label>
+            <materialDesign:Card Visibility="{Binding AccountsVisibility}" materialDesign:ShadowAssist.ShadowDepth="Depth5">
+                <cts:ATListView ItemsSource="{Binding Accounts}">
+                    <cts:ATListView.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel FlowDirection="LeftToRight" HorizontalAlignment="{Binding Path=HorizontalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContentPresenter}}, Mode=OneWayToSource}">
+                                <Label Content="{Binding Title}" VerticalContentAlignment="Center" />
+
+                                <StackPanel
+                                    Orientation="Horizontal"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center">
+                                    <!-- Show -->
+                                    <Button
+                                        Margin="0,0,10,0"
+                                        Style="{StaticResource MaterialDesignToolButton}"
+                                        Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=DataContext.ShowAccount}"
+                                        CommandParameter="{Binding .}"
+                                        Foreground="White">
+                                        <materialDesign:PackIcon Kind="Eye" />
+                                    </Button>
+
+                                    <!-- Remove -->
+                                    <Button
+                                        Style="{StaticResource ButtonDanger}"
+                                        Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, Path=DataContext.RemoveAccount}"
+                                        CommandParameter="{Binding .}">
+                                        <materialDesign:PackIcon Kind="RemoveCircle" />
+                                    </Button>
+                                </StackPanel>
+                            </DockPanel>
+                        </DataTemplate>
+                    </cts:ATListView.ItemTemplate>
+                </cts:ATListView>
+            </materialDesign:Card>
+        </StackPanel>
+    </StackPanel>
+</ContentControl>
